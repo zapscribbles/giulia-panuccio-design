@@ -1,7 +1,7 @@
 {
-    "name": "11ty-boilerplate",
+    "name": "giulia-panuccio-design",
     "version": "0.0.1",
-    "description": "My Eleventy boilerplate project, w/ Alpine, Tailwind and Browserify",
+    "description": "Giulia Panuccio's website",
     "main": "index.js",
     "scripts": {
         "start": "browserify entry.js -o src/common-js/bundle.js & ELEVENTY_PRODUCTION=false eleventy --serve & postcss src/styles/tailwind.css --o _tmp/style.css --watch",
@@ -9,14 +9,14 @@
     },
     "repository": {
         "type": "git",
-        "url": "git+https://github.com/zapscribbles/11ty-boilerplate.git"
+        "url": "git+https://github.com/zapscribbles/giulia-panuccio-design.git"
     },
     "author": "Stephen Zappia",
     "license": "ISC",
     "bugs": {
-        "url": "https://github.com/zapscribbles/11ty-boilerplate/issues"
+        "url": "https://github.com/zapscribbles/giulia-panuccio-design/issues"
     },
-    "homepage": "https://github.com/zapscribbles/11ty-boilerplate#readme",
+    "homepage": "https://github.com/zapscribbles/giulia-panuccio-design#readme",
     "dependencies": {
         "@11ty/eleventy": "^0.12.1",
         "@11ty/eleventy-navigation": "^0.1.6",

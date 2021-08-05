@@ -1,0 +1,104 @@
+---
+layout: body
+eleventyNavigation:
+    key: Filter Test
+tagsType:
+    title: Type
+    tags:
+        -   logo
+        -   brochure
+        -   rebrand
+        -   menu
+tagsAesthetic:
+    title: Aesthetic
+    tags:
+        -   retro
+        -   corporate
+        -   french
+projects:
+    -   name: Project 1
+        colour: bg-red-400
+        tags:
+            type:
+                -   logo
+                -   brochure
+            aesthetic:
+                -   retro
+    -   name: Project 2
+        colour: bg-blue-400
+        tags:
+            type:
+                -   logo
+                -   rebrand
+            aesthetic:
+                -   corporate
+    -   name: Project 3
+        colour: bg-green-400
+        tags:
+            type:
+                -   menu
+                -   rebrand
+            aesthetic:
+                -   corporate
+    -   name: Project 4
+        colour: bg-gray-400
+        tags:
+            type:
+                -   brochure
+            aesthetic:
+                -   french
+---
+
+<div x-data="componentData" class="mx-10">
+    <div class='flex justify-around'>
+        {% for tagGroup in[tagsType, tagsAesthetic] %}
+            <div class='flex-grow text-center'>
+                <h1 class="mb-5 text-xl">{{ tagGroup.title }} Tags</h1>
+                <div class='flex justify-center gap-5'>
+                    {% for tag in tagGroup.tags %}
+                        <div
+                        class='px-3 py-1 rounded border-2 border-blue-400 cursor-pointer hover:bg-blue-200'
+                        x-init="addTag('{{ tag }}')"
+                        x-data="{ selected: false }"
+                        @click="{{tag}} = !{{tag}}; selected = !selected; $dispatch('filterclicked')"
+                        :class="selected ? 'bg-blue-400 hover:bg-blue-400' : ''"
+                        >
+                            {{ tag }}
+                        </div>
+                    {% endfor %}
+                </div>
+            </div>
+        {% endfor %}
+    </div>
+
+    <div class='mt-10 flex justify-center gap-5'>
+        {% for project in projects %}
+            <div
+            class="w-52 h-52 {{ project.colour }}"
+            x-data="{ matchesFilter: false }"
+            @click="$dispatch('filterclicked')"
+            @testing="console.log('hey')"
+            @filterclicked="matchesFilter = checkTags([{% for tag in project.tags.type %}'{{tag}}', {% endfor %}{% for tag in project.tags.aesthetic %}'{{tag}}', {% endfor %}])" {# replace with a nunjucks filter? #}
+            >
+                {{ project.name }}
+            </div>
+        {% endfor %}
+    </div>
+</div>
+
+<script>
+    const componentData = {
+        addTag(tag) {
+            this[tag] = false;
+        },
+        checkTags(tags) {
+            console.log('checking tags', tags)
+            for (tag in tags) {
+                if (this[tag] === true) {
+                    return true;
+                }
+            }
+            return false;
+        }
+    }
+</script>
