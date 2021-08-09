@@ -9,6 +9,28 @@ module.exports = function (eleventyConfig) {
     // Add plugins
     eleventyConfig.addPlugin(eleventyNavigationPlugin);
 
+    // Add custom filters
+    eleventyConfig.addNunjucksFilter('arrayElemsAsVars', function (array) {
+        var output = '';
+        array.forEach((element, i, arr) => {
+            output += element;
+            if (i + 1 < arr.length) {
+                output += ', ';
+            }
+        });
+        return output;
+    });
+    eleventyConfig.addNunjucksFilter('arrayElemsAsStrs', function (array) {
+        var output = '';
+        array.forEach((element, i, arr) => {
+            output += "'" + element + "'";
+            if (i + 1 < arr.length) {
+                output += ', ';
+            }
+        });
+        return output;
+    });
+
     // Setup files
     eleventyConfig.addWatchTarget('./_tmp/style.css');
     eleventyConfig.addPassthroughCopy({ './_tmp/style.css': './css/style.css' });

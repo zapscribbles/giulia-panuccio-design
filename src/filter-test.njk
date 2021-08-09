@@ -16,7 +16,7 @@ tagsAesthetic:
         -   corporate
         -   french
 projects:
-    -   name: Project 1
+    -   title: Project 1
         colour: bg-red-400
         tags:
             type:
@@ -24,7 +24,7 @@ projects:
                 -   brochure
             aesthetic:
                 -   retro
-    -   name: Project 2
+    -   title: Project 2
         colour: bg-blue-400
         tags:
             type:
@@ -32,7 +32,7 @@ projects:
                 -   rebrand
             aesthetic:
                 -   corporate
-    -   name: Project 3
+    -   title: Project 3
         colour: bg-green-400
         tags:
             type:
@@ -40,7 +40,7 @@ projects:
                 -   rebrand
             aesthetic:
                 -   corporate
-    -   name: Project 4
+    -   title: Project 4
         colour: bg-gray-400
         tags:
             type:
@@ -49,7 +49,7 @@ projects:
                 -   french
 ---
 
-<div x-data="componentData" class="mx-10">
+<div x-data="componentData" x-init="addTags([{{ tagsType.tags | arrayElemsAsStrs }}, {{ tagsAesthetic.tags | arrayElemsAsStrs }}])" class="mx-10">
     <div class='flex justify-around'>
         {% for tagGroup in[tagsType, tagsAesthetic] %}
             <div class='flex-grow text-center'>
@@ -58,10 +58,8 @@ projects:
                     {% for tag in tagGroup.tags %}
                         <div
                         class='px-3 py-1 rounded border-2 border-blue-400 cursor-pointer hover:bg-blue-200'
-                        x-init="addTag('{{ tag }}')"
-                        x-data="{ selected: false }"
-                        @click="{{tag}} = !{{tag}}; selected = !selected; $dispatch('filterclicked')"
-                        :class="selected ? 'bg-blue-400 hover:bg-blue-400' : ''"
+                        @click="{{tag}}.status = !{{tag}}.status;"
+                        :class="{{tag}}.status ? 'bg-blue-400 hover:bg-blue-400' : ''"
                         >
                             {{ tag }}
                         </div>
@@ -75,12 +73,10 @@ projects:
         {% for project in projects %}
             <div
             class="w-52 h-52 {{ project.colour }}"
-            x-data="{ matchesFilter: false }"
-            @click="$dispatch('filterclicked')"
-            @testing="console.log('hey')"
-            @filterclicked="matchesFilter = checkTags([{% for tag in project.tags.type %}'{{tag}}', {% endfor %}{% for tag in project.tags.aesthetic %}'{{tag}}', {% endfor %}])" {# replace with a nunjucks filter? #}
+            x-show="[{{ project.tags.type | arrayElemsAsVars }}, {{ project.tags.aesthetic | arrayElemsAsVars }}].some(tag => tag.status)" {# replace with a nunjucks filter? #}
+            x-cloak
             >
-                {{ project.name }}
+                {{ project.title }}
             </div>
         {% endfor %}
     </div>
@@ -88,16 +84,23 @@ projects:
 
 <script>
     const componentData = {
-        addTag(tag) {
-            this[tag] = false;
+        addTags(tags) {
+            for (var i = 0; i < tags.length; i++) {
+                var tagName = tags[i];
+                this[tagName] = {};
+                this[tagName].name = tagName;
+                this[tagName].status = false;
+            }
         },
-        checkTags(tags) {
+        checkTags(tags, projectTitle) {
             console.log('checking tags', tags)
             for (tag in tags) {
-                if (this[tag] === true) {
+                if (tag.status == true) {
+                    console.log(projectTitle, ':', tag.name, ' was true')
                     return true;
                 }
             }
+            console.log(projectTitle, 'everything was false')
             return false;
         }
     }
