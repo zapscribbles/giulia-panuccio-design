@@ -13,8 +13,7 @@ module.exports = {
                 myDarkBlue: '#1E3A8A',
             },
             fontFamily: {
-                handwritten: ['Zeyada', 'cursive'],
-                typewriter: ['Newsreader', 'serif'],
+                body: ['Lato', 'sans-serif'],
             },
         },
     },

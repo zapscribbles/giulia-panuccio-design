@@ -9,6 +9,7 @@
         class="btn {% if entry.url == page.url %} active {% endif %}"
         {% if entry.clickFunc %} @click="{{ entry.clickFunc }}" {% endif %}
     >
-        {{ entry.title }}
+        <div>{{ entry.title }}</div>
+        <div class='nav-underline'></div>
     </a>
 {%- endfor %}
