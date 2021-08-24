@@ -7,7 +7,36 @@ html {
 }
 
 body {
-    font-family: 'Lato', sans-serif;
+    @apply font-body text-black;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    @apply font-heading text-xl tracking-tight my-5;
+}
+
+h1 {
+    @apply lg:text-6xl text-4xl my-10;
+}
+
+h2 {
+    @apply lg:text-5xl text-2xl my-8;
+}
+
+h3 {
+    @apply lg:text-4xl text-xl my-1;
+}
+
+h5 {
+    @apply text-2xl my-2;
+}
+
+p {
+    @apply my-5;
 }
 
 :focus {
@@ -15,14 +44,16 @@ body {
 }
 
 .btn {
-    @apply px-4 py-2 rounded-md text-lg text-black;
+    @apply rounded-md text-lg block px-4 py-2;
+    width: fit-content;
 }
 
-.nav-underline {
-    @apply bg-black transition-all transform scale-x-0;
-    height: 1px;
+.btn::after {
+    content: '';
+    @apply bg-black transition-all transform scale-x-0 block;
+    height: 2px;
 }
 
-.btn:hover .nav-underline {
+.btn:hover::after {
     @apply scale-x-100;
 }
