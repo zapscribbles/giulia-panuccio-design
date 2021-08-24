@@ -3,7 +3,11 @@ layout: project
 title: Aeroplane Jelly
 description: Poster, Flyer and brand identity for a theatrical show
 heroImage: /assets/uploads/gpd_website_aeroplanejelly_artboard-1-1024x672.jpg
-otherImages: []
+otherImages:
+  - image: _site/assets/uploads/gpd_website_aeroplanejelly-01-1-1024x672.jpg
+    name: Poster
+  - image: _site/assets/uploads/gpd_website_aeroplanejelly-02-1024x672.jpg
+    name: Flyer
 tagsType:
   - rebrand
   - brochure
