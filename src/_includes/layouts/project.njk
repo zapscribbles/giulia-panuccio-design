@@ -1,11 +1,20 @@
 ---
 layout: body
-title: Post Title
-description: Post description
-date: 2000-06-01
-featuredImage: /assets/uploads/placeholder.jpg
+title: Project Title
+description: Project description
+heroImage: assets/uploads/placeholder.jpg
+otherImages:
+    -   image: assets/uploads/placeholder.jpg
+        name: Image Name
 ---
 
 <h2>{{ title }}</h2>
-<img src="{{ featuredImage | url }}" alt="{{ featuredImage }}"/>
-<p>{{ content | safe }}</p>
+<p>{{ description | safe }}</p>
+<img src="{{ heroImage | url }}" alt="{{ heroImage }}"/>
+<div class="flex gap-5 w-full mt-5">
+    {% for otherImage in otherImages %}
+        <div>
+            <img class="w-full" src="{{ otherImage.image | url }}" alt="{{ otherImage.image }}"/>
+        </div>
+    {% endfor %}
+</div>
