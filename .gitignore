@@ -7,3 +7,4 @@ package-lock.json
 .netlify
 
 .env
+from_wordpress/
