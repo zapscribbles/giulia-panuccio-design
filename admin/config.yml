@@ -4,8 +4,8 @@ backend:
 
 local_backend: true
 
-media_folder: '_site/assets/uploads'
-public_folder: '/assets/uploads'
+media_folder: '/assets/uploads'
+public_folder: '_site/assets/uploads'
 
 collections:
     - name: 'projects'
