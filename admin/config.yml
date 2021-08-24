@@ -1,7 +1,8 @@
 backend:
     name: git-gateway
     branch: main
-    local_backend: true
+
+local_backend: true
 
 media_folder: '_site/assets/uploads'
 public_folder: '/assets/uploads'
@@ -14,9 +15,8 @@ collections:
       create: true
       fields:
           - { label: 'Layout', name: 'layout', widget: 'hidden', default: 'project' }
-          - { label: 'Title', name: 'title', widget: 'string' }
-          - { label: 'Description', name: 'description', widget: 'string' }
-          - { label: 'Date', name: 'date', widget: 'date', default: '' } # Setting default to "" means you have the option to not enter a value at all?
+          - { label: 'Project Title', name: 'title', widget: 'string' }
+          - { label: 'Project Description', name: 'description', widget: 'string' }
           - { label: 'Hero Image', name: 'heroImage', widget: 'image' }
           - label: 'Other Images'
             name: 'otherImages'
@@ -24,3 +24,4 @@ collections:
             fields:
                 - { label: 'Image', name: 'image', widget: 'image' }
                 - { label: 'Name', name: 'name', widget: 'string' }
+          - { label: 'Is this a hero project (displayed on home page)?', name: 'heroProject', widget: 'boolean' }
