@@ -24,4 +24,21 @@ collections:
             fields:
                 - { label: 'Image', name: 'image', widget: 'image' }
                 - { label: 'Name', name: 'name', widget: 'string' }
-          - { label: 'Is this a hero project (displayed on home page)?', name: 'heroProject', widget: 'boolean' }
+          - label: 'Tags - Type of Project'
+            name: 'tagsType'
+            widget: 'select'
+            multiple: true
+            options:
+                - { label: 'Logo', value: 'logo' }
+                - { label: 'Brochure', value: 'brochure' }
+                - { label: 'Rebrand', value: 'rebrand' }
+                - { label: 'Restaurant Menu', value: 'menu' }
+          - label: 'Tags - Project Aesthetic/Style'
+            name: 'tagsAesthetic'
+            widget: 'select'
+            multiple: true
+            options:
+                - { label: 'Retro', value: 'retro' }
+                - { label: 'Corporate', value: 'corporate' }
+                - { label: 'French Chic', value: 'frenchChic' }
+          - { label: 'Is this a hero project (displayed on the home page)?', name: 'heroProject', widget: 'boolean' }
