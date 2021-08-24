@@ -50,7 +50,7 @@ p {
 
 .btn::after {
     content: '';
-    @apply bg-black transition-all transform scale-x-0 block;
+    @apply bg-highlight transition-all transform scale-x-0 block;
     height: 2px;
 }
 

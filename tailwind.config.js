@@ -8,9 +8,7 @@ module.exports = {
     theme: {
         extend: {
             colors: {
-                myPurple: '#7C3AED',
-                myBlue: '#1E40AF',
-                myDarkBlue: '#1E3A8A',
+                highlight: '#27b4b2',
             },
             fontFamily: {
                 body: ['Lato', 'sans-serif'],

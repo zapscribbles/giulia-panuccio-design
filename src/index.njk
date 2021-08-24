@@ -28,7 +28,7 @@ heroProjects:
     <h2 class="text-center">Portfolio</h2>
     <div class='flex gap-5 justify-center'>
         {% for project in heroProjects %}
-            <a href="#" class='rounded-xl p-10 transform transition-all duration-300 hover:shadow-lg hover:-translate-y-2 bg-gray-50'>
+            <a href="#" class='rounded-xl p-10 transform transition-all duration-300 hover:shadow-lg hover:-translate-y-1 bg-white border border-gray-200'>
                 <img src="{{ project.image }}"/>
                 <h5 class=''>{{ project.name }}</h5>
                 <p class=''>Tags: {{ project.tags }}</p>
