@@ -1,0 +1,19 @@
+---
+layout: body
+permalink: /portfolio/
+eleventyNavigation:
+  key: Portfolio
+---
+<ul>
+    {% for project in collections.projects %}
+        <li>
+            <strong>
+                <a href="{{ project.url | url }}">{{ project.data.title }}</a>
+            </strong>
+            -
+            <span>
+                {{ project.data.description }}
+            </span>
+        </li>
+    {% endfor %}
+</ul>
