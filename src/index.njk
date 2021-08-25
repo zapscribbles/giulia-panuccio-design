@@ -17,7 +17,7 @@ heroProjects:
         tags: french chic, rebrand
 ---
 
-<div class="text-center mt-10 mb-36">
+<div class="text-center my-48">
     <h2>Graphic Designer & Illustrator</h2>
     <p>I began GP Design as a way to nurture my talents and skills. Entering the zone of creativity from ideas to execution is what drives me. This website is a collection of works designed to offer a snapshot into my varied skills and styles and contains works produced for both clients and as individual projects.</p>
     <p>My niche is logo and branding, and my passion is layout. Whether it is digital or print, I would be honoured to work with you as a design ally, assisting you in the telling of your story, whatever it may be.</p>
@@ -27,12 +27,21 @@ heroProjects:
 <div class="my-36">
     <h2 class="text-center">Portfolio</h2>
     <div class='flex gap-5 justify-center'>
-        {% for project in heroProjects %}
-            <a href="#" class='rounded-xl p-10 transform transition-all duration-300 hover:shadow-lg hover:-translate-y-1 bg-white border border-gray-200'>
-                <img src="{{ project.image }}"/>
-                <h5 class=''>{{ project.name }}</h5>
-                <p class=''>Tags: {{ project.tags }}</p>
-            </a>
+        {% for project in collections.projects %}
+            {% if project.data.heroProject %}
+                <a href="{{ project.url }}" class='max-w-sm rounded-xl p-10 transform transition-all duration-300 hover:shadow-lg hover:-translate-y-1 bg-white border border-gray-200'>
+                    <div><img class="w-full" src="{{ project.data.heroImage }}"/></div>
+                    <h5 class='mt-5 mb-2'>{{ project.data.title }}</h5>
+                    <h6 class='mt-2'>{{ project.data.description }}</h6>
+                    <div class='flex gap-2'>
+                        {% for tagGroup in[project.data.tagsType, project.data.tagsAesthetic] %}
+                            {% for tag in tagGroup %}
+                                <div class="px-2 rounded bg-gray-200">{{ tag }}</div>
+                            {% endfor %}
+                        {% endfor %}
+                    </div>
+                </a>
+            {% endif %}
         {% endfor %}
     </div>
     <a href="#" class="btn m-auto my-5">See More</a>

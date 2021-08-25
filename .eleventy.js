@@ -46,6 +46,10 @@ module.exports = function (eleventyConfig) {
         return now;
     });
 
+    eleventyConfig.addFilter('log', value => {
+        console.log(value);
+    });
+
     // If being deployed (build rather than start), minify everything
     eleventyConfig.addTransform('htmlmin', function (content, outputPath) {
         if (process.env.ELEVENTY_PRODUCTION && outputPath && outputPath.endsWith('.html')) {
