@@ -12,7 +12,8 @@ module.exports = {
             },
             fontFamily: {
                 body: ['Lato', 'sans-serif'],
-                heading: ['Lato', 'sans-serif'],
+                heading: ['GogoiaDeco', 'sans-serif'],
+                link: ['GogoiaRegular', 'sans-serif'],
             },
         },
     },

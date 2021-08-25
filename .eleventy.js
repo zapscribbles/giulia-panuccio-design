@@ -36,11 +36,8 @@ module.exports = function (eleventyConfig) {
     eleventyConfig.addPassthroughCopy({ './_tmp/style.css': './css/style.css' });
     eleventyConfig.addPassthroughCopy('src/common-js/*.js');
     eleventyConfig.addPassthroughCopy('src/**/*.js');
-    eleventyConfig.addPassthroughCopy('assets/*.png');
-    eleventyConfig.addPassthroughCopy('assets/*.jpg');
-    eleventyConfig.addPassthroughCopy('assets/*.ico');
     eleventyConfig.addPassthroughCopy({ 'src/_data/*.json': 'data' });
-    eleventyConfig.addPassthroughCopy('assets/uploads/*.*');
+    eleventyConfig.addPassthroughCopy('assets');
     eleventyConfig.addPassthroughCopy('admin');
     eleventyConfig.addPassthroughCopy('projects');
 
