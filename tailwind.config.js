@@ -11,9 +11,13 @@ module.exports = {
                 highlight: '#27b4b2',
             },
             fontFamily: {
-                body: ['Lato', 'sans-serif'],
+                body: ['Montserrat', 'sans-serif'],
                 heading: ['GogoiaDeco', 'sans-serif'],
                 link: ['GogoiaRegular', 'sans-serif'],
+                // Future PT Light
+                // Roboto Thin
+                // Montserrat Light
+                // Montserrat ExtraLight
             },
         },
     },

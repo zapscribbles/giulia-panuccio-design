@@ -17,28 +17,30 @@ collections:
           - { label: 'Layout', name: 'layout', widget: 'hidden', default: 'project' }
           - { label: 'Project Title', name: 'title', widget: 'string' }
           - { label: 'Project Description', name: 'description', widget: 'string' }
+          - {
+                label: "Display this project with it's category tile on the home page?",
+                name: 'heroProject',
+                widget: 'boolean',
+            }
+          - label: 'Categories'
+            name: 'categories'
+            widget: 'select'
+            multiple: true
+            options:
+                - { label: 'Logo & Branding', value: 'logoBranding' }
+                - { label: 'Product Design & Layout', value: 'productDesignLayout' }
+                - { label: 'Illustration', value: 'illustration' }
+                - { label: 'Business Cards', value: 'businessCards' }
+                - { label: 'Menu', value: 'menu' }
+                - { label: 'Gift Cards', value: 'giftCards' }
           - { label: 'Hero Image', name: 'heroImage', widget: 'image' }
+            # widget: 'object'
+            # fields:
+            #     - { label: 'Image', name: 'image', widget: 'image' }
+            #     - { label: 'Image Description', name: 'description', widget: 'string' }
           - label: 'Other Images'
             name: 'otherImages'
             widget: 'list'
             fields:
                 - { label: 'Image', name: 'image', widget: 'image' }
-                - { label: 'Name', name: 'name', widget: 'string' }
-          - label: 'Tags - Type of Project'
-            name: 'tagsType'
-            widget: 'select'
-            multiple: true
-            options:
-                - { label: 'Logo', value: 'logo' }
-                - { label: 'Brochure', value: 'brochure' }
-                - { label: 'Rebrand', value: 'rebrand' }
-                - { label: 'Restaurant Menu', value: 'menu' }
-          - label: 'Tags - Project Aesthetic/Style'
-            name: 'tagsAesthetic'
-            widget: 'select'
-            multiple: true
-            options:
-                - { label: 'Retro', value: 'retro' }
-                - { label: 'Corporate', value: 'corporate' }
-                - { label: 'French Chic', value: 'frenchChic' }
-          - { label: 'Is this a hero project (displayed on the home page)?', name: 'heroProject', widget: 'boolean' }
+                - { label: 'Image Description', name: 'description', widget: 'string' }

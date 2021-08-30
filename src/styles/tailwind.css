@@ -29,7 +29,7 @@ html {
 }
 
 body {
-    @apply font-body text-black;
+    @apply font-body text-black font-light;
 }
 
 h1,
