@@ -1,10 +1,12 @@
 ---
 layout: body
-permalink: /portfolio/
-eleventyNavigation:
-  key: Portfolio
+pagination:
+    data: categories
+    size: 1
+    alias: category
+permalink: "portfolio/{{ category | slug }}/"
 ---
-<ul>
+{# <ul>
     {% for project in collections.projects %}
         <li>
             <strong>
@@ -16,4 +18,6 @@ eleventyNavigation:
             </span>
         </li>
     {% endfor %}
-</ul>
+</ul> #}
+
+{{ category }}
