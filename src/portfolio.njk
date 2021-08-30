@@ -4,20 +4,26 @@ pagination:
     data: categories
     size: 1
     alias: category
-permalink: "portfolio/{{ category | slug }}/"
+    addAllPagesToCollections: true
+permalink: /portfolio/{{ category.name | slug }}/
 ---
-{# <ul>
+<h2>{{ category.name }}</h2>
+<div class="flex flex-col">
     {% for project in collections.projects %}
-        <li>
-            <strong>
-                <a href="{{ project.url | url }}">{{ project.data.title }}</a>
-            </strong>
-            -
-            <span>
-                {{ project.data.description }}
-            </span>
-        </li>
+        {% if category.name | slug in project.data.categories %}
+            <a href="{{ project.url | url }}" class="block tile mb-10">
+                <div class='flex gap-1 h-52 w-full'>
+                    <div><img src="{{ project.data.heroImage }}" class="rounded-tl-xl"/></div>
+                    {# {% for otherImage in project.data.otherImages %} #}
+                    <div><img src="{{ project.data.otherImages[0].image }}" class=""/></div>
+                    <div><img src="{{ project.data.otherImages[1].image }}" class="rounded-tr-xl"/></div>
+                    {# {% endfor %} #}
+                </div>
+                <div class="flex gap-3 items-end m-5">
+                    <h3 class="leading-none m-0 flex-shrink-0">{{ project.data.title }}</h3>
+                    <h6 class="m-0">{{ project.data.description }}</h6>
+                </div>
+            </a>
+        {% endif %}
     {% endfor %}
-</ul> #}
-
-{{ category }}
+</div>

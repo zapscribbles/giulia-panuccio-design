@@ -21,7 +21,8 @@ collections:
       fields:
           - { label: 'Layout', name: 'layout', widget: 'hidden', default: 'project' }
           - { label: 'Project Title', name: 'title', widget: 'string' }
-          - { label: 'Project Description', name: 'description', widget: 'string' }
+          - { label: 'Project Description', name: 'description', widget: 'string', required: false }
+          - { label: 'Client Website', name: 'website', widget: 'string', required: false, hint: 'No need for the http://, the site adds that for you' }
           - { label: "Display this project with it's category tile on the home page?", name: 'heroProject', widget: 'boolean' }
           - label: 'Categories'
             name: 'categories'
@@ -29,7 +30,7 @@ collections:
             multiple: true
             options:
             {% for category in categories -%}
-    {{'  '}}- { label: '{{ category | safe }}', value: '{{ category | slug }}' }
+    {{'  '}}- { label: '{{ category.name | safe }}{{ ' (main category)' if category.isMain === true }}', value: '{{ category.name | slug }}' }
             {% endfor %}
 {{'          '}}- { label: 'Hero Image', name: 'heroImage', widget: 'image' }
             # widget: 'object'
@@ -41,4 +42,4 @@ collections:
             widget: 'list'
             fields:
                 - { label: 'Image', name: 'image', widget: 'image' }
-                - { label: 'Image Description', name: 'description', widget: 'string' }
+                - { label: 'Image Description', name: 'description', widget: 'string', required: false, default: 'Image description' }

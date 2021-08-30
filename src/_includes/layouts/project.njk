@@ -10,15 +10,30 @@ otherImages:
       name: Flyer
 categories:
 heroProject: false
+permalink: /portfolio/{{ page.fileSlug }}/index.html
 ---
 
-<h2>{{ title }}</h2>
+<div class="flex items-center justify-between gap-4">
+    <div class="flex items-center">
+        <h2 class="m-0">{{ title }}</h2>
+        {% if website %}
+            <a href="http://{{website}}" target="_blank" class="btn">Visit client's website</a>
+        {% endif %}
+    </div>
+    <div class='flex gap-2'>
+        {% for category in categories %}
+            <a href="/portfolio/{{ category }}" class="btn">{{ category | categoryNameFromSlug }}</a>
+        {% endfor %}
+    </div>
+</div>
 <p>{{ description | safe }}</p>
+
 <img src="{{ heroImage | url }}" alt="{{ heroImage }}"/>
 <div class="flex gap-5 w-full mt-5">
     {% for otherImage in otherImages %}
         <div>
             <img class="w-full" src="{{ otherImage.image | url }}" alt="{{ otherImage.image }}"/>
+            <div class='text-center'>{{ otherImage.description }}</div>
         </div>
     {% endfor %}
 </div>

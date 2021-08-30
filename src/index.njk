@@ -13,23 +13,34 @@ js: index.js
 
 <div class="my-36">
     <h2 class="text-center">Portfolio</h2>
-    <div class='flex gap-5 justify-center'>
-        {% for project in collections.projects %}
-            {% if project.data.heroProject %}
-                <a href="{{ project.url }}" class='max-w-sm rounded-xl p-10 transform transition-all duration-300 hover:shadow-lg hover:-translate-y-1 bg-white border border-gray-200'>
-                    <div><img class="w-full" src="{{ project.data.heroImage }}"/></div>
-                    <h5 class='mt-5 mb-2'>{{ project.data.title }}</h5>
-                    <p class='mt-2'>{{ project.data.description }}</p>
-                    <div class='flex gap-2'>
-                        {% for tagGroup in[project.data.tagsType, project.data.tagsAesthetic] %}
-                            {% for tag in tagGroup %}
-                                <div class="px-2 rounded bg-gray-200">{{ tag }}</div>
-                            {% endfor %}
-                        {% endfor %}
-                    </div>
-                </a>
-            {% endif %}
-        {% endfor %}
-    </div>
-    <a href="#" class="btn m-auto my-5 mt-8">See More</a>
+    {% for mainSection in[true, false] %}
+        <div class='flex gap-5 justify-center mb-16'>
+            {% for category in categories %}
+                {% set sectionProjects = [] %}
+                {% for project in collections.projects %}
+                    {% if category.name | slug in project.data.categories %}
+                        {% set sectionProjects = (sectionProjects.push(project.data.heroImage), sectionProjects) %}
+                    {% endif %}
+                {% endfor %}
+                {% if mainSection === category.isMain %}
+                    <a href="/portfolio/{{ category.name | slug }}" class='max-w-sm tile' style="flex-basis: 100%;">
+                        <div class="grid grid-cols-2 gap-1" style="grid-template-rows: {{ '190px 95px' if mainSection === true else '100px' }};">
+                            <div class="col-span-2">
+                                <img class="rounded-t-xl" src="{{ sectionProjects[0] }}"/>
+                            </div>
+                            {% if mainSection === true %}
+                                <div class="">
+                                    <img class="" src="{{ sectionProjects[1] }}"/>
+                                </div>
+                                <div class="">
+                                    <img class="" src="{{ sectionProjects[2] }}"/>
+                                </div>
+                            {% endif %}
+                        </div>
+                        <h5 class='text-center px-2'>{{ category.name }}</h5>
+                    </a>
+                {% endif %}
+            {% endfor %}
+        </div>
+    {% endfor %}
 </div>

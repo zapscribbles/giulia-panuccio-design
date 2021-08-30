@@ -3,6 +3,8 @@ const eleventyNavigationPlugin = require('@11ty/eleventy-navigation');
 
 const now = String(Date.now());
 
+const categories = require('./src/_data/categories.json');
+
 module.exports = function (eleventyConfig) {
     eleventyConfig.setUseGitIgnore(false);
 
@@ -36,7 +38,6 @@ module.exports = function (eleventyConfig) {
     eleventyConfig.addPassthroughCopy({ './_tmp/style.css': './css/style.css' });
     eleventyConfig.addPassthroughCopy('src/common-js/*.js');
     eleventyConfig.addPassthroughCopy('src/**/*.js');
-    eleventyConfig.addPassthroughCopy({ 'src/_data/*.json': 'data' });
     eleventyConfig.addPassthroughCopy('assets');
     eleventyConfig.addPassthroughCopy('admin');
     eleventyConfig.addPassthroughCopy('projects');
@@ -48,6 +49,17 @@ module.exports = function (eleventyConfig) {
 
     eleventyConfig.addFilter('log', value => {
         console.log(value);
+    });
+
+    eleventyConfig.addFilter('categoryNameFromSlug', value => {
+        var categoryName = 'not found';
+        categories.forEach(element => {
+            var slugifiedCategoryName = eleventyConfig.getFilter('slug')(element.name);
+            if (slugifiedCategoryName == value) {
+                categoryName = element.name;
+            }
+        });
+        return categoryName;
     });
 
     // If being deployed (build rather than start), minify everything

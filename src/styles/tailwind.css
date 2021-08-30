@@ -65,6 +65,10 @@ p {
     outline: none !important;
 }
 
+img {
+    @apply w-full h-full object-cover;
+}
+
 .btn {
     @apply rounded-md text-2xl block px-4 py-2 font-link;
     width: fit-content;
@@ -78,4 +82,12 @@ p {
 
 .btn:hover::after {
     @apply scale-x-100;
+}
+
+.tile {
+    @apply rounded-xl transform transition-all duration-300 hover:shadow-lg hover:-translate-y-1 bg-white border border-gray-300;
+}
+
+.tag {
+    @apply px-4 py-1 rounded bg-gray-200;
 }
