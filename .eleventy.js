@@ -46,6 +46,9 @@ module.exports = function (eleventyConfig) {
     eleventyConfig.addShortcode('version', function () {
         return now;
     });
+    eleventyConfig.addShortcode('buildDate', function () {
+        return new Date();
+    });
 
     eleventyConfig.addFilter('log', value => {
         console.log(value);
