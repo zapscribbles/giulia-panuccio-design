@@ -6,5 +6,22 @@ layout: header
     {% block content %}
         {{ content | safe }}
     {% endblock %}
-    <div class="m-10 text-sm text-center lg:float-right text-gray-400">Build Version {% version %}</div>
+    <div class='text-center text-gray-400 text-sm flex flex-col gap-2'>
+        <div class='flex justify-center gap-3 text-2xl text-highlight'>
+            <a href="mailto:info@giuliapanuccio.com.au" class="">
+                <i class="fal fa-envelope"></i>
+            </a>
+            <a href="https://www.instagram.com/g_p_design/" class="">
+                <i class="fab fa-instagram"></i>
+            </a>
+        </div>
+        <div x-data class=''>
+            <i class="fal fa-copyright"></i> Giulia Panuccio Design <span x-text="new Date().getFullYear()"></span>
+        </div>
+        <div class=''>
+            Website built by <a class="text-highlight" href="http://www.stephenzappia.com">Stephen Zappia</a>
+        </div>
+        <div class="text-gray-50">Build Version: {% version %}</div>
+        <div class="text-gray-50">Build Date: {% buildDate %}</div>
+    </div>
 </main>
