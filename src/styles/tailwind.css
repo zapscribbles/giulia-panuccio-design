@@ -84,6 +84,10 @@ img {
     @apply scale-x-100;
 }
 
+.btn-classic {
+    @apply font-heading text-2xl bg-white px-4 py-2 border border-gray-300 rounded-xl text-center;
+}
+
 .tile {
     @apply rounded-xl transform transition-all duration-300 hover:shadow-lg hover:-translate-y-1 bg-white border border-gray-300;
 }

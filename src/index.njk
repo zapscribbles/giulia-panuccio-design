@@ -24,7 +24,7 @@ js: index.js
                 {% endfor %}
                 {% if mainSection === category.isMain %}
                     <a href="/portfolio/{{ category.name | slug }}" class='max-w-sm tile' style="flex-basis: 100%;">
-                        <div class="grid grid-cols-2 gap-1" style="grid-template-rows: {{ '190px 95px' if mainSection === true else '100px' }};">
+                        <div class="grid grid-cols-2 gap-1" style="grid-template-rows: {{ '190px 95px' if mainSection === true else '150px' }};">
                             <div class="col-span-2">
                                 <img class="rounded-t-xl" src="{{ sectionProjects[0] }}"/>
                             </div>
@@ -37,7 +37,8 @@ js: index.js
                                 </div>
                             {% endif %}
                         </div>
-                        <h5 class='text-center px-2'>{{ category.name }}</h5>
+                        <h5 class='text-center px-2 py-3 lg:py-0 lg:h-20 flex justify-center items-center'>
+                            <span>{{ category.name }}</span></h5>
                     </a>
                 {% endif %}
             {% endfor %}
