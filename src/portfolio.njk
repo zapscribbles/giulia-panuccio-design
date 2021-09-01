@@ -7,19 +7,19 @@ pagination:
     addAllPagesToCollections: true
 permalink: /portfolio/{{ category.name | slug }}/
 ---
-<h2>{{ category.name }}</h2>
+<h2 class='mt-20'>{{ category.name }}</h2>
 <div class="flex flex-col">
     {% for project in collections.projects %}
         {% if category.name | slug in project.data.categories %}
             <a href="{{ project.url | url }}" class="block tile mb-10">
-                <div class='flex gap-1 h-52 w-full'>
-                    <div><img src="{{ project.data.heroImage }}" class="rounded-tl-xl"/></div>
+                <div class='grid grid-columns-2 grid-rows-2 lg:flex gap-1 lg:h-52 w-full' style="grid-template-rows: 200px 100px;">
+                    <div class="col-span-2"><img src="{{ project.data.heroImage }}" class="rounded-t-xl lg:rounded-tr-none"/></div>
                     {# {% for otherImage in project.data.otherImages %} #}
                     <div><img src="{{ project.data.otherImages[0].image }}" class=""/></div>
-                    <div><img src="{{ project.data.otherImages[1].image }}" class="rounded-tr-xl"/></div>
+                    <div><img src="{{ project.data.otherImages[1].image }}" class="lg:rounded-tr-xl"/></div>
                     {# {% endfor %} #}
                 </div>
-                <div class="flex gap-3 items-end m-5">
+                <div class="flex flex-col lg:flex-row gap-3 items-center lg:items-end text-center lg:text-left m-5">
                     <h3 class="leading-none m-0 flex-shrink-0">{{ project.data.title }}</h3>
                     <h6 class="m-0">{{ project.data.description }}</h6>
                 </div>

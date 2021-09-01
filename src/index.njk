@@ -4,17 +4,17 @@ permalink: /
 js: index.js
 ---
 
-<div class="text-center my-48">
+<div class="text-center my-20 lg:my-48">
     <h2 class="mb-8">Graphic Designer</h2>
     <p>I began GP Design as a way to nurture my talents and skills. Entering the zone of creativity from ideas to execution is what drives me. This website is a collection of works designed to offer a snapshot into my varied skills and styles and contains works produced for both clients and as individual projects.</p>
     <p>My niche is logo and branding, and my passion is layout. Whether it is digital or print, I would be honoured to work with you as a design ally, assisting you in the telling of your story, whatever it may be.</p>
     <a href="mailto:info@giuliapanuccio.com.au" class="btn m-auto mt-8">Hire Me</a>
 </div>
 
-<div class="my-36">
+<div class="my-20">
     <h2 class="text-center">Portfolio</h2>
     {% for mainSection in[true, false] %}
-        <div class='flex gap-5 justify-center mb-16'>
+        <div class='flex flex-col lg:flex-row gap-7 lg:gap-5 justify-center items-center mb-16'>
             {% for category in categories %}
                 {% set sectionProjects = [] %}
                 {% for project in collections.projects %}

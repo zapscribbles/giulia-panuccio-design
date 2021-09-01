@@ -2,11 +2,13 @@
 layout: header
 ---
 
-<main class="mx-auto max-w-4xl mt-2 lg:mt-14">
+<main class="mx-auto max-w-xs md:max-w-lg lg:max-w-4xl mt-2 lg:mt-14">
     {% block content %}
         {{ content | safe }}
     {% endblock %}
-    <div class='text-center text-gray-400 text-sm flex flex-col gap-2 mb-10 mt-20'>
+
+    {# Footer #}
+    <div class='text-center text-gray-400 text-sm flex flex-col gap-2 mb-2 lg:mb-10 mt-32 lg:mt-20'>
         <div class='flex justify-center gap-3 text-2xl text-highlight'>
             <a href="mailto:info@giuliapanuccio.com.au" class="">
                 <i class="fal fa-envelope"></i>
