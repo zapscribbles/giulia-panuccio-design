@@ -42,15 +42,15 @@ h6 {
 }
 
 h1 {
-    @apply font-heading lg:text-7xl text-4xl my-10;
+    @apply font-heading lg:text-7xl text-5xl my-10;
 }
 
 h2 {
-    @apply font-heading lg:text-6xl text-2xl my-8;
+    @apply font-heading lg:text-6xl text-4xl my-8;
 }
 
 h3 {
-    @apply lg:text-4xl text-xl my-1;
+    @apply lg:text-4xl text-2xl my-1;
 }
 
 h5 {
@@ -90,4 +90,80 @@ img {
 
 .tag {
     @apply px-4 py-1 rounded bg-gray-200;
+}
+
+/* Menu button, courtesy of: https://codepen.io/designcouch/pen/Atyop (icon 3) */
+#menu-button {
+    width: 35px;
+    height: 15px;
+    position: relative;
+    /* margin: 50px auto; */
+    -webkit-transform: rotate(0deg);
+    -moz-transform: rotate(0deg);
+    -o-transform: rotate(0deg);
+    transform: rotate(0deg);
+    -webkit-transition: 0.5s ease-in-out;
+    -moz-transition: 0.5s ease-in-out;
+    -o-transition: 0.5s ease-in-out;
+    transition: 0.5s ease-in-out;
+    cursor: pointer;
+}
+
+#menu-button span {
+    @apply bg-black;
+    display: block;
+    position: absolute;
+    height: 2px;
+    width: 100%;
+    opacity: 1;
+    left: 0;
+    -webkit-transform: rotate(0deg);
+    -moz-transform: rotate(0deg);
+    -o-transform: rotate(0deg);
+    transform: rotate(0deg);
+    -webkit-transition: 0.25s ease-in-out;
+    -moz-transition: 0.25s ease-in-out;
+    -o-transition: 0.25s ease-in-out;
+    transition: 0.25s ease-in-out;
+}
+
+#menu-button span:nth-child(1) {
+    top: 0px;
+}
+
+#menu-button span:nth-child(2),
+#menu-button span:nth-child(3) {
+    top: 12px;
+}
+
+#menu-button span:nth-child(4) {
+    top: 24px;
+}
+
+#menu-button.open span:nth-child(1) {
+    top: 18px;
+    width: 0%;
+    left: 50%;
+}
+
+#menu-button.open span:nth-child(2) {
+    -webkit-transform: rotate(45deg);
+    -moz-transform: rotate(45deg);
+    -o-transform: rotate(45deg);
+    transform: rotate(45deg);
+    @apply bg-highlight;
+}
+
+#menu-button.open span:nth-child(3) {
+    -webkit-transform: rotate(-45deg);
+    -moz-transform: rotate(-45deg);
+    -o-transform: rotate(-45deg);
+    transform: rotate(-45deg);
+    @apply bg-highlight;
+}
+
+#menu-button.open span:nth-child(4) {
+    top: 18px;
+    width: 0%;
+    left: 50%;
 }
