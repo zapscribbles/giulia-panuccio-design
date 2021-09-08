@@ -21,7 +21,7 @@ permalink: /portfolio/{{ page.fileSlug }}/index.html
         {% endif %}
     </div>
     <div class='flex gap-2'>
-        {% for category in categories %}
+        {% for category in categories.data %}
             <a href="/portfolio/{{ category }}" class="btn">{{ category | categoryNameFromSlug }}</a>
         {% endfor %}
     </div>

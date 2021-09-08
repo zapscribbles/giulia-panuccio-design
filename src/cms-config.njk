@@ -15,7 +15,7 @@ collections:
       label: 'Projects'
       folder: 'src/projects'
       editor:
-        preview: false
+          preview: false
       slug: '{{ '{{year}}-{{month}}-{{day}}-{{slug}}' }}'
       create: true
       fields:
@@ -29,7 +29,7 @@ collections:
             widget: 'select'
             multiple: true
             options:
-            {% for category in categories -%}
+            {% for category in categories.data -%}
     {{'  '}}- { label: '{{ category.name | safe }}{{ ' (main category)' if category.isMain === true }}', value: '{{ category.name | slug }}' }
             {% endfor %}
 {{'          '}}- { label: 'Hero Image', name: 'heroImage', widget: 'image' }
@@ -43,3 +43,16 @@ collections:
             fields:
                 - { label: 'Image', name: 'image', widget: 'image' }
                 - { label: 'Image Description', name: 'description', widget: 'string', required: false, default: 'Image description' }
+    - label: 'Settings'
+      name: 'settings'
+      files:
+        - label: 'Category Settings'
+          name: 'category-settings'
+          file: 'src/_data/categories.json'
+          fields:
+            - label: 'Categories'
+              name: 'data'
+              widget: list
+              fields:
+                - { label: 'Name', name: 'name', widget: 'string' }
+                - { label: 'Is this a main category?', name: 'isMain', widget: 'boolean', required: false }

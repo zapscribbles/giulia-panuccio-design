@@ -15,7 +15,7 @@ js: index.js
     <h2 class="text-center">Portfolio</h2>
     {% for mainSection in[true, false] %}
         <div class='flex flex-col lg:flex-row gap-7 lg:gap-5 justify-center items-center mb-16'>
-            {% for category in categories %}
+            {% for category in categories.data %}
                 {% set sectionProjects = [] %}
                 {% for project in collections.projects %}
                     {% if category.name | slug in project.data.categories %}

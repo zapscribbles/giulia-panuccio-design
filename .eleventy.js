@@ -56,7 +56,7 @@ module.exports = function (eleventyConfig) {
 
     eleventyConfig.addFilter('categoryNameFromSlug', value => {
         var categoryName = 'not found';
-        categories.forEach(element => {
+        categories.data.forEach(element => {
             var slugifiedCategoryName = eleventyConfig.getFilter('slug')(element.name);
             if (slugifiedCategoryName == value) {
                 categoryName = element.name;
