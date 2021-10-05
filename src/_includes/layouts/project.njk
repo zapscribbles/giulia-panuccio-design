@@ -16,9 +16,6 @@ permalink: /portfolio/{{ page.fileSlug }}/index.html
 <div class="flex flex-col lg:flex-row items-center justify-between gap-4 mt-16 lg:mt-0">
     <div class="flex flex-col lg:flex-row items-center">
         <h2 class="m-0">{{ title }}</h2>
-        {% if website %}
-            <a href="http://{{website}}" target="_blank" class="btn">Visit client's website</a>
-        {% endif %}
     </div>
     <div class='flex gap-2'>
         {% for category in categories.data %}
@@ -31,9 +28,16 @@ permalink: /portfolio/{{ page.fileSlug }}/index.html
 <img src="{{ heroImage | url }}" alt="{{ heroImage }}"/>
 <div class="flex gap-5 w-full mt-5">
     {% for otherImage in otherImages %}
-        <div>
+        <div class="relative">
             <img class="w-full" src="{{ otherImage.image | url }}" alt="{{ otherImage.image }}"/>
             <div class='text-center'>{{ otherImage.description }}</div>
+            {% if loop.last %}
+                {% if website %}
+                    <div class="client-badge text-center flex justify-center items-center">
+                        <a href="http://{{website}}" target="_blank" class="btn">Visit client's website</a>
+                    </div>
+                {% endif %}
+            {% endif %}
         </div>
     {% endfor %}
 </div>

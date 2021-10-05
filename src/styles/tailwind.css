@@ -54,7 +54,11 @@ h3 {
 }
 
 h5 {
-    @apply text-2xl my-2;
+    @apply text-lg my-2;
+}
+
+h6 {
+    @apply text-sm;
 }
 
 p {
@@ -170,4 +174,19 @@ img {
     top: 18px;
     width: 0%;
     left: 50%;
+}
+
+.client-badge {
+    position: absolute;
+    bottom: -30px;
+    right: -30px;
+    background: black;
+    color: white;
+    width: 80px;
+    height: 80px;
+    border-radius: 100%;
+}
+
+.client-badge a {
+    @apply text-sm;
 }
