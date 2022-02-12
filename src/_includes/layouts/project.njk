@@ -26,9 +26,10 @@ permalink: /portfolio/{{ page.fileSlug }}/index.html
 <p class="text-center lg:text-left">{{ description | safe }}</p>
 
 <img src="{{ heroImage | url }}" alt="{{ heroImage }}"/>
-<div class="flex gap-5 w-full mt-5">
+<div class="flex gap-5 w-full mt-5 flex-wrap">
     {% for otherImage in otherImages %}
-        <div class="relative">
+        <div class="relative flex-grow" style="flex-basis: 25%;">
+            {#calc(100% / 3)#}
             <img class="w-full" src="{{ otherImage.image | url }}" alt="{{ otherImage.image }}"/>
             <div class='text-center'>{{ otherImage.description }}</div>
             {% if loop.last %}
