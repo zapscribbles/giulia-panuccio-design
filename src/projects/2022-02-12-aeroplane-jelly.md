@@ -8,6 +8,6 @@ categories:
   - product-design-and-layout
 heroImage: /assets/uploads/aj_1.jpg
 otherImages:
-  - description: "Postcard flyers "
+  - description: "Postcard size flyers "
     image: /assets/uploads/AJ_2.jpg
 ---
