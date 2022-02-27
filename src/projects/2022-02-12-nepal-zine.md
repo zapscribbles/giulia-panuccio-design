@@ -11,6 +11,8 @@ description: This 20 page zine was created after a 3 week trek in Nepal. I began
 heroProject: true
 categories:
   - product-design-and-layout
-heroImage: /assets/uploads/nepal-zine_2022.jpg
-otherImages: []
+heroImage: /assets/uploads/nepal-zine-a.jpg
+otherImages:
+  - description: Inside pages of zine
+    image: /assets/uploads/nepal-zine_2022.jpg
 ---
