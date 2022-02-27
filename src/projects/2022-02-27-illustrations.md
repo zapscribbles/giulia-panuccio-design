@@ -1,6 +1,6 @@
 ---
 layout: project
-title: Illustrations
+title: Illustrations - Safari Set
 description: Safari Series - Hand drawn, felt tip pen on water colour paper
 heroProject: true
 categories:
@@ -11,5 +11,5 @@ otherImages:
       colour paper
     image: /assets/uploads/artboard-1.jpg
   - description: Giraffe & Elephant - Hand drawn, felt tip pen on water colour paper
-    image: /assets/uploads/elephant-giraffe.jpg
+    image: /assets/uploads/illustrations-safari-set-2.jpg
 ---
