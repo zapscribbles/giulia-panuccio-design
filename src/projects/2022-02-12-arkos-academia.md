@@ -1,11 +1,12 @@
 ---
 layout: project
 title: ARKOS - Academia
-description: "Poster design - professional education posters to target students
-  in high school whilst also adhering to the ARKOS Academia brand. "
+description: Business Cards & Poster design - target students in high school - Sydney.
 heroProject: true
 categories:
   - product-design-and-layout
-heroImage: /assets/uploads/arkos_2022.jpg
-otherImages: []
+heroImage: /assets/uploads/aa-insitu.jpg
+otherImages:
+  - description: Poster Design - tutoring for high school students - Sydney.
+    image: /assets/uploads/arkos_2022.jpg
 ---
