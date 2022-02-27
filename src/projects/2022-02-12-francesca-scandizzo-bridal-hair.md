@@ -14,4 +14,6 @@ heroImage: /assets/uploads/FS HAIR-1.jpg
 otherImages:
   - description: DL size gift card design, business card design and apron design
     image: /assets/uploads/FS-HAIR-FLATTENED.jpg
+  - description: Wall Signage
+    image: /assets/uploads/signage.jpg
 ---
