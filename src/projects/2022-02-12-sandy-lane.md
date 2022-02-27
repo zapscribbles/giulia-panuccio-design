@@ -9,6 +9,7 @@ categories:
   - logo-and-branding
   - business-cards
   - product-design-and-layout
+  - menu
 heroImage: /assets/uploads/GPD_WEBSITE_SL-LOGO copy-01.jpg
 otherImages:
   - description: Business loyalty cards
