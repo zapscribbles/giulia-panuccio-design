@@ -1,6 +1,6 @@
 ---
 layout: project
-title: Sandy Lane
+title: SANDY LN
 description: Logo design combining a French provincial style with Sydney’s
   iconic street signs. Situated in the heart of Sydney and dedicated to
   providing customers with quality coffee and cafe street food.
