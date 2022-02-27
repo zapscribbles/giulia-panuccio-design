@@ -1,7 +1,7 @@
 ---
 layout: project
 title: Illustrations
-description: Safari Series
+description: Safari Series - Hand drawn, felt tip pen on water colour paper
 heroProject: true
 categories:
   - illustration
