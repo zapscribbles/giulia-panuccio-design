@@ -15,4 +15,6 @@ heroImage: /assets/uploads/nepal-zine-a.jpg
 otherImages:
   - description: Inside pages of zine
     image: /assets/uploads/nepal-zine_2022.jpg
+  - description: Boudhanath, Kathmandu, Nepal
+    image: /assets/uploads/nepal-zine-2022-c.jpg
 ---
