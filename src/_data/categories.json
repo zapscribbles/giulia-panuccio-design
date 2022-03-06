@@ -1,32 +1,51 @@
 {
-    "data": [
-        {
-            "name": "Logo & Branding",
-            "isMain": true
-        },
-        {
-            "name": "Product Design & Layout",
-            "isMain": true
-        },
-        {
-            "name": "Illustration",
-            "isMain": true
-        },
-        {
-            "name": "Business Cards",
-            "isMain": false
-        },
-        {
-            "name": "Menu",
-            "isMain": false
-        },
-        {
-            "name": "Gift Cards",
-            "isMain": false
-        },
-        {
-            "name": "Test Category",
-            "isMain": false
-        }
-    ]
+  "data": [
+    {
+      "name": "Logo & Branding",
+      "isMain": true,
+      "heroProjects": [
+        "/assets/uploads/arlo-1.jpg",
+        "/assets/uploads/arkos-1.jpg",
+        "/assets/uploads/c-c_9.jpg"
+      ]
+    },
+    {
+      "name": "Product Design & Layout",
+      "isMain": true,
+      "heroProjects": [
+        "/assets/uploads/PB_1-01.jpg",
+        "/assets/uploads/aj_1.jpg",
+        "/assets/uploads/aa-insitu.jpg"
+      ]
+    },
+    {
+      "name": "Illustration",
+      "isMain": true,
+      "heroProjects": [
+        "/assets/uploads/woman-in-frame-copy.jpg",
+        "/assets/uploads/gazelle.jpg"
+      ]
+    },
+    {
+      "name": "Business Cards",
+      "isMain": false,
+      "heroProjects": [
+        "/assets/uploads/gpd_website_nico_logo-branding-2022_artboard-1.jpg"
+      ]
+    },
+    {
+      "name": "Menu",
+      "isMain": false,
+      "heroProjects": [
+        "/assets/uploads/c-c_9.jpg"
+      ]
+    },
+    {
+      "name": "Gift Cards",
+      "isMain": false,
+      "heroProjects": [
+        "/assets/uploads/FS HAIR-1.jpg"
+      ]
+    }
+  ]
 }

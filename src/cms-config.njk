@@ -56,3 +56,4 @@ collections:
               fields:
                 - { label: 'Name', name: 'name', widget: 'string' }
                 - { label: 'Is this a main category?', name: 'isMain', widget: 'boolean', required: false }
+                - { label: 'Hero projects', name: 'heroProjects', widget: 'relation', collection: 'projects', value_field: 'heroImage', search_fields: ['title', 'description'], display_fields: ['title'], multiple: true }

@@ -16,25 +16,21 @@ js: index.js
     {% for mainSection in[true, false] %}
         <div class='flex flex-col lg:flex-row gap-7 lg:gap-5 justify-center items-center mb-16'>
             {% for category in categories.data %}
-                {% set sectionProjects = [] %}
-                {% for project in collections.projects %}
-                    {% if category.name | slug in project.data.categories %}
-                        {% set sectionProjects = (sectionProjects.push(project.data.heroImage), sectionProjects) %}
-                    {% endif %}
-                {% endfor %}
                 {% if mainSection === category.isMain %}
                     <a href="/portfolio/{{ category.name | slug }}" class='max-w-sm tile' style="flex-basis: 100%;">
                         <div class="grid grid-cols-2 gap-1" style="grid-template-rows: {{ '190px 95px' if mainSection === true else '150px' }};">
                             <div class="col-span-2">
-                                <img class="rounded-t-xl" src="{{ sectionProjects[0] }}"/>
+                                <img class="rounded-t-xl" src="{{ category.heroProjects[0] }}"/>
                             </div>
                             {% if mainSection === true %}
-                                <div class="">
-                                    <img class="" src="{{ sectionProjects[1] }}"/>
-                                </div>
-                                <div class="">
-                                    <img class="" src="{{ sectionProjects[2] }}"/>
-                                </div>
+                                {% for heroProject in category.heroProjects %}
+                                    {# Only show additional projects if there are any, but don;t show the first one again #}
+                                    {% if not loop.first %}
+                                        <div class="">
+                                            <img class="" src="{{ heroProject }}"/>
+                                        </div>
+                                    {% endif %}
+                                {% endfor %}
                             {% endif %}
                         </div>
                         <h5 class='text-center px-2 py-3 lg:py-0 lg:h-20 flex justify-center items-center'>
