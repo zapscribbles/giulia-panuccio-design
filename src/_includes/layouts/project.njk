@@ -12,13 +12,12 @@ categories:
 heroProject: false
 permalink: /portfolio/{{ page.fileSlug }}/index.html
 ---
-
 <div class="flex flex-col lg:flex-row items-center justify-between gap-4 mt-16 lg:mt-0">
     <div class="flex flex-col lg:flex-row items-center">
         <h2 class="m-0">{{ title }}</h2>
     </div>
     <div class='flex gap-2'>
-        {% for category in categories.data %}
+        {% for category in categories %}
             <a href="/portfolio/{{ category }}" class="btn">{{ category | categoryNameFromSlug }}</a>
         {% endfor %}
     </div>
